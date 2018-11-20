@@ -4,7 +4,7 @@
  *  Created on: 2018. 11. 8.
  *      Author: seung
  */
-#include<stdio.h>
+#include<stdio.h>//test
 int main(void){
 	char str[100] = "Yesterday \"All\" My \'Troubles\' Seemed So Far Away.";
 	int nArr[3] = {0, 0, 0};

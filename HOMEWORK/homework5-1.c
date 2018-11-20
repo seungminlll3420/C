@@ -4,7 +4,7 @@
  *  Created on: 2018. 11. 8.
  *      Author: seung
  */
-#include<stdio.h>
+#include<stdio.h>//test
 #include<math.h>
 #define N 10
 double fun(double);
