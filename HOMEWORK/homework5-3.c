@@ -4,7 +4,7 @@
  *  Created on: 2018. 11. 8.
  *      Author: seung
  */
-#include<stdio.h>
+#include<stdio.h>//text
 int main(void){
 	char str1[100], str2[100], str[200];
 	int i,j;
