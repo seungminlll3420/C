@@ -4,12 +4,13 @@
  *  Created on: 2018. 10. 20.
  *      Author: IoT-2
  */
-#include<stdio.h>
+#include<stdio.h>//test
 int main(void){
 	int x1 =0xAAAA, x2 = 0x5555;
 	int y = 2017, m = 9, d = 1;
 	char s1[]="Hello", s2[]= "," ,s3[] = "worid!";
 	double f1 = 3.141592;
+
 
 	printf("0xAAAA | 0x5555 = 0x%x\n",x1 | x2);
 	printf("(0xAAAA ^ 0x5555) >> 2 = 0x%x\n",(x1 ^ x2) >> 2);
