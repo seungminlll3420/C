@@ -17,15 +17,12 @@ void countTeams(int h, int wA, int wB, int wC) {
 }
 int main() {
   int T;
-  int wA = 0, wB = 0, wC = 0;
   freopen("input.txt", "r", stdin);
   scanf("%d", &T);
   for (int i = 0; i < T; i++) {
     scanf("%d", &N);
-    for (int j = 1; j <= N; j++)
-      scanf("%d", &weight[j]);
-    wA =0; wB = 0; wC =0;
-    countTeams(0,wA,wB,wC);
+    for (int j = 1; j <= N; j++)  scanf("%d", &weight[j]);
+    countTeams(0,0,0,0);
     printf("%d \n", result);
     result = 0;
   }
