@@ -6,6 +6,7 @@
  */
 #include<stdio.h>
 int main(void){
+
 	char str[100] = "Yesterday \"All\" My \'Troubles\' Seemed So Far Away.";
 	int nArr[3] = {0, 0, 0};
 	int i=0;
