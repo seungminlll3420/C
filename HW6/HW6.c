@@ -39,21 +39,22 @@ void mergeSort(int A[], int p, int r){
 int partition(int A[],int p,int r){
         int i = p;
         int j = r;
-        int l =p-1;
+        int l =p;
         while(i != r) {
                 if(A[r] > A[i]) {
-                        l++;
+
                         int temp = A[i];
                         A[i] = A[l];
                         A[l] = temp;
+                        l++;
 
                 }
                 i++;
         }
-        int temp = A[l+1];
-        A[l+1] = A[r];
+        int temp = A[l];
+        A[l] = A[r];
         A[r] = temp;
-        return l+1;
+        return l;
 }
 void quickSort(int A[],int p,int r){
         int q;
@@ -76,11 +77,11 @@ int main(){
 
         mergeSort(A,0,9);
         quickSort(B,0,9);
-        printf("merge Sort :");
+        printf("merge Sort : ");
         for(int i =0; i<10; i++) {
                 printf("%d, ",A[i]);
         }
-        printf("\nquick Sort:");
+        printf("\nquick Sort : ");
         for(int i =0; i<10; i++) {
                 printf("%d, ",B[i]);
         }
