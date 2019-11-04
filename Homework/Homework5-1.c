@@ -24,7 +24,6 @@ int main(void){
 	std = fun(std);
 	printf("Avg is %.2f\n", avg);
 	printf("Std is %.2f.", std);
-
 	return 0;
 }
 double fun(double a){

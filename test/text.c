@@ -38,12 +38,10 @@ int main() {
                 scanf("%d", &N);
                 for (int j = 0; j < N; j++) scanf("%d", &Byungyun[j]);
                 quickSort(Byungyun,0,N-1);
-                q = N/3;
                 w =3;
                 for(int j = N-1; 0<=j; j--) {
-                        if(w == 1 && q != 0) {
+                        if(w == 1) {
                                 w=3;
-                                q--;
                                 continue;
                         }
                         sum += Byungyun[j];
