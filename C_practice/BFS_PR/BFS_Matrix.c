@@ -18,19 +18,16 @@ QueueType* createQueue() {
         Q->rear = 0;
         return Q;
 }
-
 int isEmpty(QueueType*Q) {
         if(Q->front ==Q->rear) return 1;
         else return 0;
 }
-
 int isFull(QueueType *Q) {
         if ((Q->rear + 1) % Q_SIZE == Q->front % Q_SIZE) {
                 return 1;
         }
         else return 0;
 }
-
 void enQueue(QueueType *Q, int item) {
         if (isFull(Q)) return;
         else {
@@ -38,7 +35,6 @@ void enQueue(QueueType *Q, int item) {
                 Q->queue[Q->rear] = item;
         }
 }
-
 int deQueue(QueueType *Q) {
         if (isEmpty(Q)) return -1;
         else {
@@ -46,9 +42,7 @@ int deQueue(QueueType *Q) {
                 return Q->queue[Q->front];
         }
 }
-
 int *visited;
-
 Graph*NewGraph(int vNum){
         Graph*graph=(Graph*)malloc(sizeof(Graph));
         graph->vertexNum=vNum;
@@ -59,6 +53,7 @@ Graph*NewGraph(int vNum){
         }
         visited=(int*)malloc(sizeof(int)*(vNum+1));  return graph;
 }
+
 void BFS_Mat(Graph *g, int s){
         QueueType *BFS_Q = createQueue();
         for(int v = 0; v< g->vertexNum; v++) {
@@ -80,6 +75,7 @@ void BFS_Mat(Graph *g, int s){
         }
         free(BFS_Q);
 }
+
 void AddEdge(Graph*graph,int start,int end){
         graph->adjMatrix[start][end]=1;
         graph->adjMatrix[end][start]=1;
