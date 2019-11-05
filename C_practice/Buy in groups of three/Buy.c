@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define MAX_N 20000
-int Byungyun[MAX_N];
+int product[MAX_N];
 int N = 0;
 int partition(int A[],int p,int r){
         int i = p;
@@ -36,15 +36,15 @@ int main() {
         scanf("%d", &T);
         for (int i = 0; i < T; i++) {
                 scanf("%d", &N);
-                for (int j = 0; j < N; j++) scanf("%d", &Byungyun[j]);
-                quickSort(Byungyun,0,N-1);
+                for (int j = 0; j < N; j++) scanf("%d", &product[j]);
+                quickSort(product,0,N-1);
                 w =3;
                 for(int j = N-1; 0<=j; j--) {
                         if(w == 1) {
                                 w=3;
                                 continue;
                         }
-                        sum += Byungyun[j];
+                        sum += product[j];
                         w--;
                 }
                 printf("%d\n", sum);
