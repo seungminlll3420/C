@@ -8,6 +8,16 @@ typedef struct {
         int front, rear;
 } QueueType;
 
+typedef struct node {
+        int vertex;
+        struct node *next;
+} Node;
+
+typedef struct {
+        int vertexNum;
+        Node ** adjList;
+} Graph;
+
 QueueType* createQueue() {
         QueueType *Q;
         Q = (QueueType *)malloc(sizeof(QueueType));
@@ -47,18 +57,20 @@ int deQueue(QueueType *Q) {
 int *visited;
 
 Graph *newGraph(int vNum){
-        Graoh *graoh = (Graph *)malloc(sizeof(Graph));
-        graph->vertexnum = vNum;
+        Graph *graph = (Graph *)malloc(sizeof(Graph));
+        graph->vertexNum = vNum;
         graph->adjList = (Node **)malloc(sizeof(Node *)*(vNum + 1));
         for(int i =0; i<= vNum; i++) graph->adjList[i]= NULL;
         visited = (int *)malloc(sizeof(int)*(vNum + 1));
         return graph;
 }
-void BFS_List(graph *g, int s){
+void BFS_Mat(Graph *g, int s){
         QueueType *BFS_Q = createQueue();
+
 
         free(BFS_Q);
 }
+
 void AddEdge(Graph*g, int start, int end) {
         Node*newNode = (Node *)malloc(sizeof(Node));
         newNode->vertex = end;
@@ -81,7 +93,7 @@ void printGraph(Graph*graph) {
 
 int main(){
 
-        Graph  = NewGraph(8);
+        Graph *g = NewGraph(8);
 
         AddEdge(g,1,2);
         AddEdge(g,1,3);
