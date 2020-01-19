@@ -1,45 +1,33 @@
 #include <stdio.h>
-#define PATH 0
-#define WALL 1
-#define VISITED 2
-#define UNAVAILABLE 3
-#define N 8
-
-int cells[][8] = {{0,0,0,0,0,0,0,1},
-  {0,1,1,1,0,1,0,1},
-    {0,0,0,0,1,0,0,1},
-     {0,1,0,0,1,1,0,1},
-       {0,1,1,1,0,0,1,1},
-         {0,0,0,0,0,1,0,1},
-           {1,0,1,0,1,1,0,1},
-           {1,1,1,0,0,0,0,0}
-         };
-
-int findPath(int x, int y){
-
-  if(x == 7 && y ==7) {
-    cells[x][y] = VISITED;
-    return 1;
+int binom[6][6];
+int binomial(int n, int k){
+  if(n == k|| k == 0) return 1;
+  else if(binom[n][k] > -1) return binom[n][k];
+  else {
+    binom[n][k] = binomial(n-1,k) + binomial(n-1,k-1);
+    return binom[n][k];
   }
-  if(cells[x][y] == WALL || cells[x][y] == VISITED ) return 0;
-  if( (x < 0) || (8 <= x) || (y < 0) || (8 <= y) ) return 0;
-
-  cells[x][y] = VISITED;
-
-  if(findPath(x+1,y) | findPath(x,y-1) | findPath(x-1,y) | findPath(x,y+1))
-    return 1;
-  cells[x][y] = UNAVAILABLE;
-  return 0;
-}
-
-void printMaze(){
-  for(int i =0; i<N ; i++){
-    for(int j =0;j<N;j++) printf("%d",cells[i][j]);
-    printf("\n");
-    }
 }
 int main(){
-  printMaze();
-  printf("%d\n",findPath(0,0));
-  printMaze();
+  for(int i = 0; i< 6; i++){
+    for(int j = 0; j< 6; j++){
+      binom[i][j] = -1;
+    }
+    printf("\n");
+  }
+  int o = binomial(4,5);
+  for(int i = 0; i< 6; i++){
+    for(int j = 0; j< 6; j++){
+      printf("%d, ", binom[i][j]);
+    }
+    printf("\n");
+  }
+}
+
+int mat(int i,int j){
+  if(i == 1 && j== 1)
+    return m[i][j]
+    else if(i == 1){
+
+    }
 }
