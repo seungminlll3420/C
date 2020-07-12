@@ -26,8 +26,6 @@ int queens(int h){
 }
 int main(){
         if(queens(0) == 1) {
-
-
                 printf("Success\n");
         }
 }
